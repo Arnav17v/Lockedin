@@ -2,13 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/db';
 import Session from '@/models/Session';
 import { getServerSession } from 'next-auth';
-import { options } from '@/app/api/auth/[...nextauth]/route';
+import { authOptions } from '@/lib/auth';
 import mongoose from 'mongoose';
 import axios from 'axios';
 
 export async function GET(request: NextRequest) {
   try {
-    const session = await getServerSession(options);
+    const session = await getServerSession(authOptions);
 
     if (!session || !session.user) {
       return NextResponse.json(
@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(options);
+    const session = await getServerSession(authOptions);
 
     if (!session || !session.user) {
       return NextResponse.json(
