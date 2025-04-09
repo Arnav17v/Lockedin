@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StudyLens Web Platform
+
+The StudyLens Web Platform is a dashboard and analytics tool for users of the StudyLens desktop application. It provides a secure way for users to manage their accounts and visualize their study session performance data.
+
+## Features
+
+- **Authentication System**: Secure user registration, login, and session management
+- **User Dashboard**: Visual overview of study performance with key metrics
+- **Session Logs**: Detailed table of all study sessions with sorting capabilities
+- **Privacy-Focused**: Works seamlessly with the StudyLens desktop application that processes webcam data locally
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, Tailwind CSS
+- **Backend**: Next.js API Routes, MongoDB
+- **Authentication**: NextAuth.js with JWT
+- **Visualization**: Chart.js
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v14 or newer)
+- MongoDB (local or Atlas connection)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/studylens-web.git
+   cd studylens-web
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. Create a `.env.local` file in the root directory with the following variables:
+   ```
+   MONGODB_URI=mongodb://localhost:27017/studylens
+   NEXTAUTH_SECRET=your-secret-key-here
+   NEXTAUTH_URL=http://localhost:3000
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+- `/src/app`: Next.js app router pages
+- `/src/components`: Reusable UI components
+- `/src/models`: MongoDB data models
+- `/src/lib`: Utility functions and libraries
+- `/src/providers`: Context providers (Auth, etc.)
+- `/public`: Static assets
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## API Endpoints
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **POST /api/register**: Create a new user account
+- **POST /api/auth/[...nextauth]**: Authentication routes (login, session)
+- **GET /api/sessions**: Fetch user's study sessions
+- **POST /api/sessions**: Create a new study session 
+
+## Security
+
+This application implements several security best practices:
+
+- Password hashing with bcrypt
+- JWT-based authentication with HttpOnly cookies
+- Server-side session validation
+- Input validation
+- HTTPS enforcement in production
+
+## Data Flow
+
+1. User studies with the StudyLens desktop application
+2. Desktop app analyzes webcam feed locally to track focus, drowsiness, etc.
+3. User manually sends aggregated statistical data to the web platform
+4. Web platform stores this data and provides visualization and analysis
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
