@@ -206,15 +206,38 @@ export default function DashboardPage() {
           <p className="mt-4 text-gray-600 dark:text-gray-300">Loading your study data...</p>
         </div>
       ) : error ? (
-        <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-md">
-          <p className="text-red-800 dark:text-red-200">{error}</p>
+        <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg text-center">
+          <h3 className="text-lg font-medium text-blue-800 dark:text-blue-200">Download the app to start tracking your study sessions</h3>
+          <p className="mt-2 text-blue-700 dark:text-blue-300">
+            Use the StudyLens desktop app to track your focus and improve your study habits.
+          </p>
+          <div className="mt-4">
+            <a 
+              href="https://drive.google.com/drive/folders/1nmpELV_ex-xsCchNIe-A6Q_BPBjxntDY?usp=drive_link" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+              Download StudyLens
+            </a>
+          </div>
         </div>
       ) : sessions.length === 0 ? (
-        <div className="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg text-center">
-          <h3 className="text-lg font-medium text-yellow-800 dark:text-yellow-200">No study sessions found</h3>
-          <p className="mt-2 text-yellow-700 dark:text-yellow-300">
-            Use the StudyLens desktop app to track your study sessions and send data to your dashboard.
+        <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg text-center">
+          <h3 className="text-lg font-medium text-blue-800 dark:text-blue-200">Download the app to start tracking your study sessions</h3>
+          <p className="mt-2 text-blue-700 dark:text-blue-300">
+            Use the StudyLens desktop app to track your focus and improve your study habits.
           </p>
+          <div className="mt-4">
+            <a 
+              href="https://drive.google.com/drive/folders/1nmpELV_ex-xsCchNIe-A6Q_BPBjxntDY?usp=drive_link" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+              Download StudyLens
+            </a>
+          </div>
         </div>
       ) : (
         <>
