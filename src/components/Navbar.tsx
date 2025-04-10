@@ -41,6 +41,14 @@ export default function Navbar() {
                 >
                   Session Logs
                 </Link>
+                <a
+                  href="https://drive.google.com/drive/folders/1nmpELV_ex-xsCchNIe-A6Q_BPBjxntDY?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 dark:hover:bg-blue-900"
+                >
+                  Download
+                </a>
                 <button
                   onClick={handleSignOut}
                   className="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 dark:hover:bg-blue-900"
@@ -53,6 +61,14 @@ export default function Navbar() {
               </>
             ) : (
               <>
+                <a
+                  href="https://drive.google.com/drive/folders/1nmpELV_ex-xsCchNIe-A6Q_BPBjxntDY?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 dark:hover:bg-blue-900"
+                >
+                  Download
+                </a>
                 <Link
                   href="/login"
                   className={`text-white px-3 py-2 rounded-md text-sm font-medium ${

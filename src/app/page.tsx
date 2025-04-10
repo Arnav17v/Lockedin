@@ -115,6 +115,54 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Download section */}
+        <div className="mx-auto mt-24 max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="text-base font-semibold leading-7 text-blue-600 dark:text-blue-400">Download</h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+              Get the StudyLens Desktop App
+            </p>
+            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+              Download our desktop application to start tracking your study habits and improving your productivity.
+            </p>
+            <div className="mt-10 flex justify-center">
+              <a
+                href="https://drive.google.com/drive/folders/1nmpELV_ex-xsCchNIe-A6Q_BPBjxntDY?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md bg-blue-600 dark:bg-blue-700 px-5 py-3 text-md font-semibold text-white shadow-sm hover:bg-blue-500 dark:hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:focus-visible:outline-blue-500"
+              >
+                Download App
+              </a>
+            </div>
+          </div>
+          
+          {/* System Requirements */}
+          <div className="mx-auto mt-16 max-w-2xl lg:mt-20">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">System Requirements</h3>
+              
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-medium text-gray-900 dark:text-white">Operating System</h4>
+                  <p className="text-gray-600 dark:text-gray-300">macOS: macOS 11 (Big Sur) or newer (Supports both Intel and Apple Silicon Macs)</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">(Note: Older macOS versions might work but are not officially tested.)</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-medium text-gray-900 dark:text-white">Hardware</h4>
+                  <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                    <li>Processor: Apple Silicon (M1, M2, M3 Macs) or Intel Core i7-10th gen or above.</li>
+                    <li>RAM: Minimum 4 GB RAM (8 GB or more recommended for smoother performance, especially alongside other applications).</li>
+                    <li>Webcam: A functional internal or external webcam is required for analysis.</li>
+                    <li>Disk Space: Approx. 2GB free disk space (for the application itself and downloaded AI models - exact size may vary).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
           <div className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#4A90E2] to-[#50E3C2] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"></div>
         </div>
